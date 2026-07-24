@@ -1,0 +1,219 @@
+=> Install Virtual Environment
+
+    #linux
+    sudo apt install python3-venv
+
+
+=> Create Virtual Environment
+
+    #Linux/macOs
+    python3 -m venv myenv    // you can use anyname whatever what you want "myenv"
+
+    #windows
+    py -m venv myenv
+
+    => for activate
+        #linux/macOs
+        source myenv/bin/activate           // activate
+
+        #windows
+        .\myenv\Scripts\activate            // activate
+
+        pip3 list
+
+        deactivate                          // deactivate
+
+        pip3 list
+
+----------------------------------------------
+
+=> mysql module
+
+    https://pypi.org/project/mysql-connector-python/
+
+    pip3 install mysql-connector-python
+
+        pip3 list
+
+----------------------------------------------
+=> python dotenv
+
+    (i)
+    https://pypi.org/project/python-dotenv/
+
+    pip3 install python-dotenv
+
+    pip3 list
+
+    (ii)
+    create .env file
+
+    (iii)
+    from dotenv import load_dotenv
+    import os
+    load_dotenv()
+
+----------------------------------------------
+
+=> Telegram Bot
+    https://python-telegram-bot.org/
+
+    pip install python-telegram-bot
+
+    pip3 list
+
+----------------------------------------------
+
+=> Get Telegram Token Key
+
+    (i) Google or Telegram app , find @BotFather
+
+        https://telegram.me/BotFather
+
+    (ii) Create a new bot
+        click start or send / start
+        send /newbot
+
+            BotFather will ask for :
+                name for your bot = pybotbysai
+                bot username = Must end with bot = @pybotbysaibot
+
+    (iii) copy your API token
+
+    Done! Congratulations on your new bot. You will find it at t.me/pybotbysaibot. You can now add a description, about section and profile picture for your bot, see /help for a list of commands. By the way, when you've finished creating your cool bot, ping our Bot Support if you want a better username for it. Just make sure the bot is fully operational before you do this.
+
+    Use this token to access the HTTP API:
+    8722211298:AAHRjP37hQA-RGE4-PZxV29yLwzmesAVz4E
+    Keep your token secure and store it safely, it can be used by anyone to control your bot.
+
+    For a description of the Bot API, see this page: https://core.telegram.org/bots/api
+
+
+
+----------------------------------------------
+https://firebase.google.com
+
+click to go to console > get started > Create a new firebase project
+Project Name = Python B5 Project
+click Continue
+
+
+Enable Gemini in Firebase = unchecked
+Click Continue
+
+Enable Google Analytics for this project = Uncheck
+Click Create Project > Continue > Continue
+
+
+-------------------------------------------------------
+
+=> Register An App For Web
+
+    => Config API key for Firebase SDK Code ( Software Development Kit )
+
+    Click "Project overview" > Project Settings > General > Click "web icon"
+
+    Register app > App nickname = pythonb5app
+                    Also set up Firebase Hosting for this app = uncheck
+                    click "Register app" > click "Continue to console"
+
+-------------------------------------------------------
+
+
+=> Get Firebase SDK Code (Software Development Kit)
+
+    Click "Project overview" > Project Settings > General > your apps > CDN > You can see
+
+    # For Javascript
+    <script type="module">
+        # Import the functions you need from the SDKs you need
+        import { initializeApp } from "firebase/app";
+        # TODO: Add SDKs for Firebase products that you want to use
+        # https://firebase.google.com/docs/web/setup#available-libraries
+
+        # Your web app's Firebase configuration
+        const firebaseConfig = {
+        apiKey: "AIzaSyCKbQzojcRQg_JpVb2jtm5OuWDAdrktHCY",
+        authDomain: "python-b5-project.firebaseapp.com",
+        projectId: "python-b5-project",
+        storageBucket: "python-b5-project.firebasestorage.app",
+        messagingSenderId: "589834788867",
+        appId: "1:589834788867:web:e8b87e3d0e28c303b62e36"
+        };
+
+        # Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+
+
+-------------------------------------------------------
+
+=> Create Database
+    Build > Firestore Database > Create Database
+        (i) Select edition > Standard edition > Click "Next"
+        (ii) Database ID & location
+                Database ID = (default)
+                Location = asia-southeast1 (Singapore) > click "Next"
+        (iii) Configure > start in production mode > click "Create"
+
+=> Error for writing (PERMISSION_DENIED)
+Build > Firestore Database > Rules > allow read, write: if true; > click "Publish"
+
+
+-------------------------------------------------------
+=> firebase module
+
+    https://pypi.org/project/firebase-admin/
+
+    pip install firebase-admin
+
+    pip3 list
+
+    (i) how to get Firebase Service Account as json file
+
+        go to Firebase console > Open your firebase Project > Project overview > Project Settings > service account > Choose Python > click generate new private key > click generate key
+        After download "serviceAccountKey.json"
+
+----------------------------------------------
+
+=> MongoDB Driver
+
+    https://www.mongodb.com/ > Resources > mongodb for educator > resources > mongodb driver > python > pymongo or "Get started with mongodb python" > Get started >
+
+
+    https://pypi.org/project/pymongo/
+
+    pip install pymongo
+
+    pip3 list
+
+----------------------------------------------
+
+Deploy to server (render.com)
+
+    (i) Prepare your project
+        method 1 (manually)
+            create requirements.txt
+            activate > pip3 list > copy all dependencies and paste
+
+
+        method 2 (auto)
+            we don't need to create requirements.txt
+            activate > pip freeze
+    (ii) Upload to github
+
+    (iii) Render ( click New - Web service )
+        Source Code = your repo
+        Name = pythonmongotgbotbyencsai
+        projectOptional = No project / No Environment
+        Language = Python3
+        branch = main
+        Region = Singapore (Southeast Asia)
+        Root DirectoryOptional = e.g. src
+        Build Command = pip install -r requirements.txt
+        Start Command = python3 bot.py
+
+        Environment Variables
+        TELEGRAM_TOKEN =8722211298:AAHRjP37hQA-RGE4-PZxV29yLwzmesAVz4E
+        MONGO_URI = mongodb+srv://saizawlinphyo_db_user:Saizaw136@crm.gwe5gyr.mongodb.net/
+
+        click "deploy Web Service"
