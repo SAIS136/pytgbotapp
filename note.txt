@@ -214,6 +214,6 @@ Deploy to server (render.com)
 
         Environment Variables
         TELEGRAM_TOKEN =8722211298:AAHRjP37hQA-RGE4-PZxV29yLwzmesAVz4E
-        MONGO_URI = mongodb+srv://saizawlinphyo_db_user:Saizaw136@crm.gwe5gyr.mongodb.net/
+        MONGO_URI = mongodb+srv://user1:Saizaw136@crm.gwe5gyr.mongodb.net/
 
         click "deploy Web Service"
